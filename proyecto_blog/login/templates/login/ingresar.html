@@ -1,0 +1,6 @@
+<a href="{% url 'lista_de_blogs' %}">Ir la lista de blogs</a>
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Iniciar Sesión</button>
+</form>
