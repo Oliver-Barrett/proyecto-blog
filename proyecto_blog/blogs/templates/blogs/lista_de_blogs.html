@@ -1,6 +1,6 @@
 {% if user.is_authenticated %}
   <a href="{% url 'salir' %}">Salir</a>
-  <a href="{% url 'crear_blog' %}">CREAR Nuevo Blog</a>
+  <a href="{% url 'crear_blog' %}">CREAR OTRO Nuevo Blog</a>
 {% else %}
   <a href="{% url 'ingresar' %}">Entrar</a>
   <a href="{% url 'crear_cuenta' %}">Crear Cuenta</a>
