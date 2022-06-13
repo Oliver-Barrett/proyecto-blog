@@ -16,9 +16,3 @@ class Salir(LogoutView):
     template_name = 'login/salir.html'
 
 
-class CrearCuenta(CreateView):
-  template_name = 'login/crear_cuenta.html'
-  success_url = reverse_lazy('ingresar')
-  form_class = UserCreationForm
-
-

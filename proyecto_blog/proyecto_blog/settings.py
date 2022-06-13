@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'perfil.apps.PerfilConfig',
     'login.apps.LoginConfig',
     'blogs.apps.BlogsConfig',
     'django.contrib.admin',
@@ -123,3 +124,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_URL = "crear_perfil"
