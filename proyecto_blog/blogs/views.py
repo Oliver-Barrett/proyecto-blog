@@ -2,6 +2,9 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from blogs.models import BlogModel
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+
 
 class ListaDeBlogs(ListView):
     model = BlogModel
@@ -9,10 +12,14 @@ class ListaDeBlogs(ListView):
 
 
 
-class CrearBlog(CreateView):
+class CrearBlog(LoginRequiredMixin, CreateView):
     model = BlogModel
     success_url = reverse_lazy("lista_de_blogs")
-    fields = ["titulo", "sub_titulo", "cuerpo", "autor"]
+    fields = ["titulo", "sub_titulo", "cuerpo"]
+
+    def form_valid(self, form):
+        form.instance.autor = self.request.user
+        return super().form_valid(form)
 
 
 
