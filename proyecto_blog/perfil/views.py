@@ -4,14 +4,14 @@ from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import CreateView, UpdateView, DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
+from perfil.forms import RegistroForm
 
 
 
 class CrearPerfil(SuccessMessageMixin, CreateView):
   template_name = 'perfil/crear_perfil.html'
   success_url = reverse_lazy('ingresar')
-  form_class = UserCreationForm
-  success_message = "¡¡ Se creo tu perfil satisfactoriamente !!"
+  form_class = RegistroForm
 
 
 class DetallePerfil(DetailView):
