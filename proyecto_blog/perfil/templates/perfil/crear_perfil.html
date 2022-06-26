@@ -1,7 +1,15 @@
-<a href="{% url 'lista_de_blogs' %}">Volver a Lista</a>
+{% extends 'blogs/lista_de_blogs.html' %}
+
+{% block title %}Crear Perfil{% endblock %}
+
+{% block content %}
+
+
 
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Crear Cuenta">
 </form>
+
+{% endblock %}

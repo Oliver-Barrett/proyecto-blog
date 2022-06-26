@@ -1,8 +1,16 @@
-<a href="{% url 'lista_de_blogs' %}">Volver a Lista</a>
+{% extends 'blogs/lista_de_blogs.html' %}
+
+{% block title %}Detalle Blog{% endblock %}
+
+{% block content %}
+
+
 <div>
     <h1>{{object.titulo}}</h1>
-    <h2>{{object.sub_titulo}}</h2>
+    <h3>{{object.sub_titulo}}</h3>
     <p> {{object.cuerpo}} </p>
     <h3>{{object.fecha}}</h3>
-    <h3>{{object.autor}}</h3>
+    <h4>{{object.autor}}</h4>
 </div>
+
+{% endblock %}

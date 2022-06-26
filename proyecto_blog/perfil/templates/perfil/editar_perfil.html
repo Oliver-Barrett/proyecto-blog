@@ -1,7 +1,15 @@
-<a href="{% url 'detalle_perfil' user.id %}">Volver al perfil</a>
+{% extends 'blogs/lista_de_blogs.html' %}
+
+{% block title %}Editar Perfil{% endblock %}
+
+{% block content %}
+
+<a href="{% url 'detalle_perfil' user.id %}">Perfil</a>
 
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Guardar">
 </form>
+
+{% endblock %}

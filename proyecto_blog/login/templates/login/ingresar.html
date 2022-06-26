@@ -1,6 +1,14 @@
-<a href="{% url 'lista_de_blogs' %}">Ir la lista de blogs</a>
+{% extends 'blogs/lista_de_blogs.html' %}
+
+{% block title %}Ingresar{% endblock %}
+
+{% block content %}
+
+
 <form method="POST">
     {% csrf_token %}
     {{form.as_p}}
     <button type="submit">Iniciar Sesión</button>
 </form>
+
+{% endblock %}

@@ -1,7 +1,15 @@
-<a href="{% url 'lista_de_blogs' %}">Volver a Lista</a>
+{% extends 'blogs/lista_de_blogs.html' %}
+
+{% block title %}Borrar Blog{% endblock %}
+
+{% block content %}
+
+<a href="{% url 'lista_de_blogs' %}">Volver a Blogs</a>
 <form method="post">{% csrf_token %}
     <p>¿Está Seguro que quiere borrar "{{ object.titulo }}"?</p>
     {{ form }}
     <input type="submit" value="Confirmar">
     
 </form>
+
+{% endblock %}
