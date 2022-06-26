@@ -25,14 +25,23 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-  <a href="{% url 'salir' %}">Salir</a>
-  <a href="{% url 'crear_blog' %}">Nuevo Blog</a>
-  <a href="{% url 'detalle_perfil' user.id %}">Perfil {{user.username}}</a>
-
+  <div class="container">
+    <header class="d-flex justify-content-center py-3">
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="{% url 'crear_blog' %}" class="nav-link text-dark">Nuevo Blog</a></li>
+        <li class="nav-item"><a href="{% url 'salir' %}" class="nav-link text-dark">Salir</a></li>
+        <li class="nav-item"><a href="{% url 'detalle_perfil' user.id %}" class="nav-link text-dark">Perfil {{user.username}}</a></li>
 {% else %}
-  <a href="{% url 'ingresar' %}">Entrar</a>
-  <a href="{% url 'crear_perfil' %}">Crear Cuenta</a>
+  <div class="container">
+    <header class="d-flex justify-content-center py-3">
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="{% url 'ingresar' %}" class="nav-link text-dark">Ingresar</a></li>
+        <li class="nav-item"><a href="{% url 'crear_perfil' %}" class="nav-link text-dark">Crear Cuenta</a></li>
 {% endif %}
+      </ul>
+    </header>
+</div>
+
 
 {% if object_list %}
     {% for blog in object_list %}
@@ -40,7 +49,7 @@
       <div class="feature-icon d-inline-flex align-items-center justify-content-center bg-primary bg-gradient text-white fs-2 mb-3">
       </div>
       <h2>{{blog.titulo}}</h2>
-      <p>{{blog.cuerpo}}</p>
+      <p class="lead my-3">{{blog.cuerpo}}</p>
       <a href="{% url 'detalle_de_blog' blog.id %}" class="icon-link d-inline-flex align-items-center">Leer mas...</a>
     </div>
     {% if user.is_authenticated %}

@@ -5,12 +5,13 @@
 {% block content %}
 
 
-<div>
-    <h1>{{object.titulo}}</h1>
-    <h3>{{object.sub_titulo}}</h3>
-    <p> {{object.cuerpo}} </p>
-    <h3>{{object.fecha}}</h3>
-    <h4>{{object.autor}}</h4>
-</div>
-
-{% endblock %}
+<article class="blog-post">
+    <h2 class="blog-post-title mb-1">{{object.titulo}}</h2>
+    <p class="blog-post-meta">{{object.fecha_creacion}} <a>{{object.autor}}</a></p>
+    
+    <h4>{{object.sub_titulo}}</h4>
+    <hr>
+    <p>{{object.cuerpo}}</p>
+    
+    
+  {% endblock %}
