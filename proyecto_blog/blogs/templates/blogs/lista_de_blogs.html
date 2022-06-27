@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}Lista de Blogs{% endblock %}</title>
+    <title>{% block title %}Blogs{% endblock %}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   </head>
 
@@ -17,7 +17,7 @@
   
         <ul class="nav nav-pills">
           <li class="nav-item"><a href="{% url 'lista_de_blogs' %}" class="nav-link">Blogs</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Acerca de</a></li>
+          <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">Acerca de</a></li>
         </ul>
       </header>
     </div>
@@ -35,8 +35,8 @@
   <div class="container">
     <header class="d-flex justify-content-center py-3">
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href="{% url 'ingresar' %}" class="nav-link text-dark">Ingresar</a></li>
-        <li class="nav-item"><a href="{% url 'crear_perfil' %}" class="nav-link text-dark">Crear Cuenta</a></li>
+        <li class="nav-item"><a href="{% url 'ingresar' %}" class="nav-link text-blue">Ingresar</a></li>
+        <li class="nav-item"><a href="{% url 'crear_perfil' %}" class="nav-link text-blue">Crear Cuenta</a></li>
 {% endif %}
       </ul>
     </header>
@@ -73,7 +73,7 @@
 
     <ul class="nav col-md-4 justify-content-end">
       <li class="nav-item"><a href="{% url 'lista_de_blogs' %}" class="nav-link px-2 text-muted">Blogs</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Acerca de</a></li>
+      <li class="nav-item"><a href="{% url 'about' %}" class="nav-link px-2 text-muted">Acerca de</a></li>
     </ul>
   </footer>
 </div>

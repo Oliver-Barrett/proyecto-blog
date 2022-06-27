@@ -7,11 +7,9 @@ from blogs.models import BlogModel
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse, request
 
-def index(request):
-    return render(request, './blogs/about.html')
+def about(request):
+    return render(request, 'blogs/about.html')
 
-# class About(ListView):
-#   template_name = "blogs/about.html"
 
 class ListaDeBlogs(ListView):
     model = BlogModel
