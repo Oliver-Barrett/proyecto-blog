@@ -4,8 +4,8 @@
 
 {% block content %}
 
-<a href="{% url 'lista_de_blogs' %}">Volver a Blogs</a>
-<form method="post">{% csrf_token %}
+<a href="{% url 'lista_de_blogs' %}" class="container">Volver a Blogs</a>
+<form method="post" class="container">{% csrf_token %}
     <p>¿Está Seguro que quiere borrar "{{ object.titulo }}"?</p>
     {{ form }}
     <input type="submit" value="Confirmar">

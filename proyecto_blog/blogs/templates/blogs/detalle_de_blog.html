@@ -6,12 +6,12 @@
 
 
 <article class="blog-post">
-    <h2 class="blog-post-title mb-1">{{object.titulo}}</h2>
-    <p class="blog-post-meta">{{object.fecha_creacion}} <a>{{object.autor}}</a></p>
+    <h2 class="blog-post-title mb-1 container">{{object.titulo}}</h2>
+    <p class="blog-post-meta container">{{object.fecha_creacion}} <a>{{object.autor}}</a></p>
     
-    <h4>{{object.sub_titulo}}</h4>
+    <h4 class="container">{{object.sub_titulo}}</h4>
     <hr>
-    <p>{{object.cuerpo}}</p>
+    <p class="container">{{object.cuerpo}}</p>
     
     
   {% endblock %}

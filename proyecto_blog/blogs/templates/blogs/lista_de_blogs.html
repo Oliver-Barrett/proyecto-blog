@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}Lista de Blogs{% endblock %}</title>
+    <title>{% block title %}Blogs{% endblock %}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   </head>
 
@@ -17,7 +17,7 @@
   
         <ul class="nav nav-pills">
           <li class="nav-item"><a href="{% url 'lista_de_blogs' %}" class="nav-link">Blogs</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Acerca de</a></li>
+          <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">Acerca de</a></li>
         </ul>
       </header>
     </div>
@@ -28,15 +28,15 @@
   <div class="container">
     <header class="d-flex justify-content-center py-3">
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href="{% url 'crear_blog' %}" class="nav-link text-dark">Nuevo Blog</a></li>
-        <li class="nav-item"><a href="{% url 'salir' %}" class="nav-link text-dark">Salir</a></li>
-        <li class="nav-item"><a href="{% url 'detalle_perfil' user.id %}" class="nav-link text-dark">Perfil {{user.username}}</a></li>
+        <li class="nav-item"><a href="{% url 'crear_blog' %}" class="nav-link text-blue">Nuevo Blog</a></li>
+        <li class="nav-item"><a href="{% url 'salir' %}" class="nav-link text-blue">Salir</a></li>
+        <li class="nav-item"><a href="{% url 'detalle_perfil' user.id %}" class="nav-link text-blue">Perfil {{user.username}}</a></li>
 {% else %}
   <div class="container">
     <header class="d-flex justify-content-center py-3">
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href="{% url 'ingresar' %}" class="nav-link text-dark">Ingresar</a></li>
-        <li class="nav-item"><a href="{% url 'crear_perfil' %}" class="nav-link text-dark">Crear Cuenta</a></li>
+        <li class="nav-item"><a href="{% url 'ingresar' %}" class="nav-link text-blue">Ingresar</a></li>
+        <li class="nav-item"><a href="{% url 'crear_perfil' %}" class="nav-link text-blue">Crear Cuenta</a></li>
 {% endif %}
       </ul>
     </header>
@@ -48,12 +48,12 @@
     <div class="feature col">
       <div class="feature-icon d-inline-flex align-items-center justify-content-center bg-primary bg-gradient text-white fs-2 mb-3">
       </div>
-      <h2>{{blog.titulo}}</h2>
-      <p class="lead my-3">{{blog.cuerpo}}</p>
-      <a href="{% url 'detalle_de_blog' blog.id %}" class="icon-link d-inline-flex align-items-center">Leer mas...</a>
+      <h2 class="container">{{blog.titulo}}</h2>
+      <p class="lead my-3 container" >{{blog.cuerpo}}</p>
+      <a href="{% url 'detalle_de_blog' blog.id %}" class="icon-link d-inline-flex align-items-center container">Leer mas...</a>
     </div>
     {% if user.is_authenticated %}
-      <a href="{% url 'editar_blog' blog.id %}">Editar</a>
+      <a href="{% url 'editar_blog' blog.id %}" class="container">Editar</a>
       <a href="{% url 'borrar_blog' blog.id %}">Borrar</a>
     {% endif %}
     {% endfor %}
@@ -73,7 +73,7 @@
 
     <ul class="nav col-md-4 justify-content-end">
       <li class="nav-item"><a href="{% url 'lista_de_blogs' %}" class="nav-link px-2 text-muted">Blogs</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Acerca de</a></li>
+      <li class="nav-item"><a href="{% url 'about' %}" class="nav-link px-2 text-muted">Acerca de</a></li>
     </ul>
   </footer>
 </div>
