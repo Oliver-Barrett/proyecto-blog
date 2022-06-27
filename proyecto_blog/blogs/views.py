@@ -32,7 +32,7 @@ class DetalleDeBlog(DetailView):
 class EditarBlog(UpdateView):
     model = BlogModel
     success_url = reverse_lazy("lista_de_blogs")
-    fields = ["titulo", "sub_titulo", "cuerpo", "autor"]
+    fields = ["titulo", "sub_titulo", "cuerpo"]
 
 
 

@@ -4,9 +4,9 @@
 
 {% block content %}
 
-<a href="{% url 'detalle_perfil' user.id %}">Perfil</a>
+<a href="{% url 'detalle_perfil' user.id %}" class="container">Perfil</a>
 
-<form method="post">
+<form method="post" class="container">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Guardar">

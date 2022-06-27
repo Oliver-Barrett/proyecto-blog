@@ -5,15 +5,16 @@
 {% block content %}
 
 
-<a href="{% url 'editar_perfil' user.id %}">Editar Perfil</a>
+<div class="card" style="width: 18rem;">
+    <img src="{{ object.avatar_set.first.image.url }}" class="card-img-top">
+    <div class="card-body">
+      <p class="card-text"><li>Nombre: {{object.first_name}}</li></p>
+      <p class="card-text"><li>Apellido: {{object.last_name}}</li></p>
+      <p class="card-text"><li>Correo electronico: {{object.email}}</li></p>
+      <p class="card-text"><li>Nombre de Usuario: {{object.username}}</li></p>
+      <a href="{% url 'editar_perfil' user.id %}">Editar Perfil</a>
 
-<ul>
-    <li>Nombre: {{object.first_name}}</li>
-    <li>Apellido: {{object.last_name}}</li>
-    <li>Correo electronico: {{object.email}} </li>
-    <li>Nombre de Usuario: {{object.username}}</li>
-</ul>
-
-<img height="128" src="{{ object.avatar_set.first.image.url }}" />
+    </div>
+  </div>
 
 {% endblock %}
