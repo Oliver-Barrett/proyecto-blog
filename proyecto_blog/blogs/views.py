@@ -1,10 +1,17 @@
+from re import template
+from django import views
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from blogs.models import BlogModel
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpResponse, request
 
+def index(request):
+    return render(request, './blogs/about.html')
 
+# class About(ListView):
+#   template_name = "blogs/about.html"
 
 class ListaDeBlogs(ListView):
     model = BlogModel
